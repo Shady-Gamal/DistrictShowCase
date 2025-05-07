@@ -17,13 +17,12 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.IntSize
+import bosta.android_task.districtshowcase.ui.theme.ShimmerColor
 
 fun Modifier.shimmerEffect() : Modifier = composed {
     var size by remember {
-
         mutableStateOf(IntSize.Zero)
     }
-
     val transition = rememberInfiniteTransition(label = "")
 
     val startOffsetX by transition.animateFloat(
@@ -34,9 +33,9 @@ fun Modifier.shimmerEffect() : Modifier = composed {
 
 background(brush = Brush.linearGradient(
     listOf(
-        Color(0xffD0D5DD),
+        ShimmerColor,
         Color.White,
-Color(0xffD0D5DD)
+        ShimmerColor
     ),
     start = Offset(startOffsetX,0f),
     end = Offset(startOffsetX+ size.width.toFloat(),

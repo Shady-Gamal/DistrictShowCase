@@ -82,7 +82,6 @@ fun CitiesLazyColumn(
                             isCityExpanded = !isCityExpanded
                         }
                     }
-
                     AnimatedVisibility(visible = isCityExpanded) {
                         Column(
                             Modifier
@@ -105,7 +104,6 @@ fun CitiesLazyColumn(
                 fontSize = 36.sp)
         }
     }
-
 }
 
 @Composable
@@ -143,10 +141,8 @@ fun DistrictItem(modifier: Modifier = Modifier,
     Row(modifier = modifier.padding(8.dp)){
         districtsItem?.districtName?.let {districtName->
             Text(text = districtName)
-
         }
     }
-
 }
 
 @Composable

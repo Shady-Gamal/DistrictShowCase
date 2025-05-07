@@ -25,5 +25,4 @@ fun SearchBar(
         maxLines = 1,
         shape = RoundedCornerShape(8.dp)
         )
-
 }

@@ -28,12 +28,15 @@ class CitiesAndDistrictsViewModel @Inject constructor(
     val searchText: StateFlow<String> = _searchText
 
     var citiesAndDistrictsState by mutableStateOf(CitiesAndDistrictsState())
-
     private var _citiesAndDistrictsStateFullList:CitiesAndDistricts?=null
 
     init {
         getAllCitiesAndDistricts()
         filterCitiesByNameDebounceInitialization()
+    }
+
+    fun setSearchText(searchText:String){
+        _searchText.value = searchText
     }
 
     private fun getAllCitiesAndDistricts(){
@@ -57,15 +60,7 @@ class CitiesAndDistrictsViewModel @Inject constructor(
                 }
             }
         }
-
-
     }
-
-    fun setSearchText(searchText:String){
-        _searchText.value = searchText
-    }
-
-
     private fun filterCitiesByNameDebounceInitialization(){
         viewModelScope.launch {
            _searchText.debounce(500).collectLatest {text->
