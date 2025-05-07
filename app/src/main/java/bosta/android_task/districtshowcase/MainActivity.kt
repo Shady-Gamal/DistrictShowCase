@@ -28,7 +28,6 @@ class MainActivity : ComponentActivity() {
                         //type-safe navigation goes here
                         CitiesAndDistrictsScreen()
                     }
-
                 }
             }
         }

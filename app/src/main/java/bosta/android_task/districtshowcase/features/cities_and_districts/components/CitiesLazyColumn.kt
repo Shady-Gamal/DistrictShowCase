@@ -30,6 +30,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -52,7 +53,7 @@ fun CitiesLazyColumn(
             item {
                 Row(modifier = Modifier.padding(16.dp),
                     verticalAlignment = Alignment.CenterVertically) {
-                Text(text = "Choose the delivery area",
+                Text(text = stringResource(R.string.choose_the_delivery_area),
                     fontWeight = FontWeight.W700,
                     fontSize = 24.sp)
                     Spacer(modifier = Modifier.weight(1f))
@@ -82,7 +83,6 @@ fun CitiesLazyColumn(
                             isCityExpanded = !isCityExpanded
                         }
                     }
-
                     AnimatedVisibility(visible = isCityExpanded) {
                         Column(
                             Modifier
@@ -105,7 +105,6 @@ fun CitiesLazyColumn(
                 fontSize = 36.sp)
         }
     }
-
 }
 
 @Composable
@@ -143,10 +142,8 @@ fun DistrictItem(modifier: Modifier = Modifier,
     Row(modifier = modifier.padding(8.dp)){
         districtsItem?.districtName?.let {districtName->
             Text(text = districtName)
-
         }
     }
-
 }
 
 @Composable

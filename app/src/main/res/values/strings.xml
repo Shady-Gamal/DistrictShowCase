@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DistrictShowcase</string>
     <string name="city_area">City/Area</string>
+    <string name="choose_the_delivery_area">Choose the delivery area</string>
 </resources>
